@@ -414,8 +414,8 @@
   /* Carousel Track (for infinite scrolling) */
   .carousel-track {
     display: flex;
-    gap: 30px;
-    animation: scroll 15s linear infinite;
+    gap:100px;
+    animation: scroll 20s linear infinite;
   }
   
   /* Carousel Card */
@@ -459,7 +459,7 @@
   @media (max-width: 768px) {
     .carousel-track {
       animation: scroll 10s linear infinite;
-      gap: 20px;
+      gap: 50px;
     }
   
     .carousel-card {
