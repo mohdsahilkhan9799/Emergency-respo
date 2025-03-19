@@ -1,0 +1,197 @@
+/* ---------- TOP BAR ---------- */
+.custom-top-bar {
+    background: linear-gradient(to right, #e52d27, #ff6a00);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .custom-social-icon {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    margin-left: 8px;
+  }
+  .custom-social-icon:hover {
+    color: #ffd9a8;
+  }
+  
+  /* ---------- MIDDLE HEADER ---------- */
+  .custom-middle-header {
+    border-bottom: 2px solid #f2f2f2;
+  }
+  .custom-logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+  .custom-event-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 0;
+  }
+  .custom-event-subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 0;
+  }
+  .custom-support-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+  .custom-mobile-support-org {
+    border-top: 2px solid #f2f2f2;
+  }
+  
+  /* ---------- BOTTOM NAVBAR ---------- */
+  .custom-bg-gradient {
+    background: linear-gradient(to right, #0f4d58, #258a93);
+  }
+  .navbar-nav .custom-nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  .navbar-nav .custom-nav-link:hover {
+    color: #ffd9a8 !important;
+  }
+  
+  /* ---------- Dropdown Animation & Behavior ---------- */
+  /* For Desktop: Use custom animation on hover */
+  @media (min-width: 992px) {
+    .custom-dropdown-menu {
+      border-radius: 6px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      display: none;
+    }
+    .custom-dropdown:hover > .custom-dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* For Mobile: Revert to Bootstrap default (click-to-open) */
+  @media (max-width: 991px) {
+    .custom-dropdown-menu {
+      transition: none;
+      opacity: 1 !important;
+      transform: none !important;
+      display: none;
+    }
+    .custom-dropdown.show > .custom-dropdown-menu {
+      display: block !important;
+    }
+  }
+  .custom-dropdown-item:hover {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  /* ---------- Registration Button ---------- */
+  .custom-btn-registration {
+    font-weight: 600;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    transition: all 0.3s;
+  }
+  .custom-btn-registration:hover {
+    background-color: #ffd9a8;
+    color: #000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+  
+  /* Custom Dropdown (Fix for Mobile Click-to-Open) */
+.custom-dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-dropdown .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- Typography & Font Enhancements ---------- */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  .custom-nav-link {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .custom-btn-registration {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  /* ---------- Mobile Menu Animation ---------- */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(to right, #0f4d58, #258a93);
+    color: white;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+  }
+  .mobile-nav.open {
+    left: 0;
+  }
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-nav .nav-item {
+    margin-bottom: 15px;
+  }
+  .mobile-nav .nav-link {
+    color: white;
+    font-size: 18px;
+  }
+  .mobile-nav .close-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  /* ---------- Dropdown Fixes ---------- */
+  .custom-dropdown-menu {
+    display: none;
+  }
+  .custom-dropdown-menu.show {
+    display: block;
+  }
+  
+
+  /* ---------- Marquee Animation ---------- */
+.hdm-marquee-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: hdm-marquee 10s linear infinite;
+}
+@keyframes hdm-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
