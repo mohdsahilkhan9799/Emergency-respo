@@ -64,10 +64,11 @@
         }
     }
     
+    
     .overlay {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 50px;
         transform: translate(-50%, -50%);
         background: rgba(0, 0, 0, 0.7);
         color: white;
@@ -93,7 +94,7 @@
     
     .btn {
         margin: 5px;
-        padding: 10px 20px;
+        padding: 10px 50px;
         font-size: 16px;
         border-radius: 5px;
         transition: all 0.3s ease;
@@ -267,137 +268,6 @@
     }
 }
 
-    
-/* Full-Page About Section */
-.about-section {
-    background: url("https://static.vecteezy.com/system/resources/previews/015/287/530/non_2x/bahrain-national-day-celebration-background-vector.jpg") no-repeat center center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* About Container */
-.about-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 60px;
-    border-radius: 10px;
-    max-width: 1200px;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Image Section */
-.about-image {
-    flex: 1;
-    text-align: center;
-}
-
-.about-image img {
-    width: 280px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Patron Information */
-.patron-info {
-    margin-top: 15px;
-}
-
-.patron-info h3 {
-    font-size: 1.5rem;
-    color: #27e900;
-}
-
-.patron-info p {
-    font-size: 1.1rem;
-    margin: 5px 0;
-    font-weight: bold;
-}
-
-/* Text Section */
-.about-text {
-    flex: 2;
-    max-width: 600px;
-    text-align: justify;
-    padding-left: 30px;
-}
-
-.about-text h2 {
-    font-size: 2.5rem;
-    color: #27e900;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.about-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Buttons */
-.buttons {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.btn {
-    margin: 10px;
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-primary {
-    background: #ffd700;
-    color: black;
-}
-
-.btn-secondary {
-    background: #333;
-    color: white;
-}
-
-.btn:hover {
-    opacity: 0.85;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px;
-    }
-
-    .about-text {
-        padding-left: 0;
-        max-width: 100%;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-
-    .about-text p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
-
 
 /* Carousel Container */
 .carousel-container {
@@ -468,3 +338,141 @@
     }
   }
   
+
+      
+/* Full-Page About Section */
+.about-section {
+    background: url("https://static.vecteezy.com/system/resources/previews/015/287/530/non_2x/bahrain-national-day-celebration-background-vector.jpg") no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* About Container */
+.about-container {
+    background: linear-gradient(to right, #0f4d58, #258a93);
+    padding: 60px;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Section */
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+
+/* Patron Information */
+.patron-info {
+    margin-top: 15px;
+}
+
+.patron-info h3 {
+    font-size: 1.5rem;
+    color: rgb(64, 255, 26);
+}
+
+.patron-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Text Section */
+.about-text {
+    flex: 2;
+    max-width: 600px;
+    text-align: justify;
+    padding-left: 30px;
+}
+
+.about-text h2 {
+    font-size: 1.5rem;
+    color: rgb(64, 255, 26);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: black;
+}
+
+.btn-secondary {
+    background: #333;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-text {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .about-text h2 {
+        padding-top: 10px;
+        font-size: 1.3rem;
+        color: rgb(64, 255, 26);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+

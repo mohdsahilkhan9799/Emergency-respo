@@ -7,28 +7,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HomePage.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 const slides = [
   {
     id: 1,
     image:
-      "https://media.istockphoto.com/id/92498384/photo/firemen.jpg?s=2048x2048&w=is&k=20&c=zgoSYX4bFoCHiMDK4BlGX_hNfxzE6MMq9SzWrPmm-kY=",
-    title: "Emergency Response & Fire Leadership",
+      "https://img.freepik.com/premium-photo/fireman-fire_37874-674.jpg?w=1380",
+
+        title: "Emergency Response & Fire Leadership",
     description:
       "Global Summit 2024 (ERFL Global Summit 2024) is an international platform that will address research and innovations in the field of emergency response, crisis management, fire and safety.",
   },
   {
     id: 2,
     image:
-      "https://media.istockphoto.com/id/1783069832/photo/firefighters-team-working.jpg?s=2048x2048&w=is&k=20&c=TTWOKDZbaNC5rJp0CfBx9qt8cpG2rKYwdPbkrSWi1dE=",
-    title: "Managing Fire & Emergency Response",
+    "https://img.freepik.com/free-photo/firefighter-trying-contain-forest-fire_23-2150880213.jpg?t=st=1742449823~exp=1742453423~hmac=af9fa48daa29b85e49f9a65134c2ab3d2800a5e0ef6534e069f66a1750ed3166&w=1380",
+  title: "Managing Fire & Emergency Response",
     description: "Preparedness | Response | Recovery",
   },
   {
     id: 3,
     image:
-      "https://media.istockphoto.com/id/92498384/photo/firemen.jpg?s=2048x2048&w=is&k=20&c=zgoSYX4bFoCHiMDK4BlGX_hNfxzE6MMq9SzWrPmm-kY=",
-    title: "Emergency Response & Fire Leadership",
+      "https://img.freepik.com/premium-photo/fireman-fire_37874-4266.jpg?w=1380",
+    title: "Fire Leadership",
     description:
       "Global Summit 2024 (ERFL Global Summit 2024) is an international platform that will address research and innovations in the field of emergency response, crisis management, fire and safety.",
   },
@@ -82,15 +84,53 @@ const HomePage = () => {
                 className="slide-image"
               />
             </div>
-            <div className="overlay d-none d-lg-block" data-aos="fade-up">
-              <h1>{slide.title}</h1>
-              <p>{slide.description}</p>
-              <div className="buttons">
-                <button className="btn btn-primary">Visitor Registration</button>
-                <button className="btn btn-secondary">Book Your Delegate Pass</button>
-                <button className="btn btn-success">Book a Stand</button>
-              </div>
-            </div>
+            <div className="overlay d-none d-lg-block" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+  <h1>
+  <Typewriter
+          words={[slide.title]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={80}
+          deleteSpeed={50}
+          delaySpeed={2000}
+        />
+        </h1>
+  <p><Typewriter
+          words={[slide.description]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={80}
+          deleteSpeed={50}
+          delaySpeed={2000}
+        /></p>
+  <div className="buttons">
+    <button className="btn btn-primary">Visitor Registration</button>
+    <button className="btn btn-secondary">Book Your Delegate Pass</button>
+    <button className="btn btn-success">Book a Stand</button>
+  </div>
+</div>
+
+<div className="overlay d-block d-lg-none" >
+<h1>
+  <Typewriter
+          words={[slide.title]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={80}
+          deleteSpeed={50}
+          delaySpeed={2000}
+        />
+        </h1>
+  <p className="d-none ">{slide.description}</p>
+  <div className="buttons">
+    <button className="btn btn-primary">Visitor Registration</button>
+    <button className="btn btn-secondary d-none">Book Your Delegate Pass</button>
+    <button className="btn btn-success d-none ">Book a Stand</button>
+  </div>
+</div>
           </div>
         ))}
       </Slider>
@@ -113,8 +153,9 @@ const HomePage = () => {
       </div>
     </div>
        {/* About Section */}
-       <section className="about-section">
+       <section className="about-section" style={{overflow:"hidden"}}>
       <div className="about-container">
+        
         {/* Image Section */}
         <div className="about-image" data-aos="fade-up">
           <img
@@ -133,16 +174,23 @@ const HomePage = () => {
         <div className="about-text" data-aos="fade-up">
           <h2>About ERFL Global Summit</h2>
           <p>
-            The <strong>Emergency Response & Fire Leadership Global Summit (ERFL)</strong> is an international platform dedicated to addressing research, innovations, and best practices in emergency response, crisis management, fire safety, and leadership.
+            The <strong>Emergency Response & Fire Leadership Global Summit (ERFL)</strong> 
+            is an international platform dedicated to addressing research, innovations, and 
+            best practices in emergency response, crisis management, fire safety, and leadership.
           </p>
           <p>
-            Bringing together <strong>experts, policymakers, and industry leaders</strong> from across the world, ERFL fosters collaboration and knowledge-sharing to tackle the evolving challenges in emergency response management.
+            Bringing together <strong>experts, policymakers, and industry leaders</strong> 
+            from across the world, ERFL fosters collaboration and knowledge-sharing to tackle 
+            the evolving challenges in emergency response management.
           </p>
+
+          {/* Buttons */}
           <div className="buttons">
-            <button className="btn btn-primary">Learn More</button>
-            <button className="btn btn-secondary">Register Now</button>
+            <button className="btn btn-secondary">Learn More</button>
+            <button className="btn btn-success">Register Now</button>
           </div>
         </div>
+        
       </div>
     </section>
 
