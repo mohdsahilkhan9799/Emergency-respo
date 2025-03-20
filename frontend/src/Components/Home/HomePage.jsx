@@ -8,6 +8,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "./HomePage.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 
 const slides = [
   {
@@ -52,12 +58,42 @@ const sponsors = [
   { id: 4, src: "https://erfl.org/demo2025.3/img/its.jpg", alt: "Honeywell" },
   { id: 5, src: "https://erfl.org/demo2025.3/img/honeywell.jpg", alt: "Siemens" },
 ];
+const supported = [
+  { id: 1, src: "https://erfl.org/demo2025.3/images/randum/ERFL_EVENT_BROCHURE.png", alt: "Saudi Sicli",
+    title:"Event Brochure",
+    description: "Download ERFL Global Summit 2023 Event Brochure"
+   },
+  { id: 2, src: "https://erfl.org/demo2025.3/images/randum/ERFL_EVENT_BROCHURE.png", alt: "Bayan",
+    title:"Call For Papers",
+    description: "Don't miss the opportunity to present your latest research & expertise"
+   },
+  { id: 2, src: "https://erfl.org/demo2025.3/images/randum/ERFL_EVENT_BROCHURE.png", alt: "Bayan" ,
+    title:"Sponsorship Opportunities",
+    description: "Advance and reinfroce your brand"
+  },
+  { id: 2, src: "https://erfl.org/demo2025.3/images/randum/ERFL_EVENT_BROCHURE.png", alt: "Bayan",
+    title:"Exhibitor Registration",
+    description: "A unique platform to showcase your brand"
+   },
+  
+];
+
 
 const HomePage = () => {
   useEffect(() => {
     AOS.init({ duration: 1200, once: true });
   }, []);
 
+  // Custom Arrows for Slider
+const CustomNextArrow = (props) => {
+  const { onClick } = props;
+  return <FaArrowRight className="custom-arrow next" onClick={onClick} />;
+};
+
+const CustomPrevArrow = (props) => {
+  const { onClick } = props;
+  return <FaArrowLeft className="custom-arrow prev" onClick={onClick} />;
+};
   const settings = {
     dots: false,
     infinite: true,
@@ -73,7 +109,7 @@ const HomePage = () => {
 
   return (
     <>
-    <div className="homepage-container">
+    <div className="homepage-container"style={{overflow:"hidden"}}>
       <Slider {...settings} className="slider-section">
         {slides.map((slide) => (
           <div key={slide.id} className="slide">
@@ -82,6 +118,7 @@ const HomePage = () => {
                 src={slide.image}
                 alt={slide.title}
                 className="slide-image"
+                data-aos="fade-left"
               />
             </div>
             <div className="overlay d-none d-lg-block" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -112,7 +149,7 @@ const HomePage = () => {
   </div>
 </div>
 
-<div className="overlay d-block d-lg-none" >
+<div className="overlay d-block d-lg-none" style={{overflow:"hidden"}}>
 <h1>
   <Typewriter
           words={[slide.title]}
@@ -135,7 +172,7 @@ const HomePage = () => {
         ))}
       </Slider>
 
-      <div className="stats-section">
+      <div className="stats-section" style={{overflow:"hidden"}}>
         {stats.map((stat) => (
           <div key={stat.id} className="stat-box" data-aos="fade-up">
             <h2>
@@ -161,6 +198,7 @@ const HomePage = () => {
           <img
             src="https://erfl.org/demo2025.3/img/H.E%20Khalid%20Al-Salem.png"
             alt="H.E. Khalid Al Salime"
+            data-aos="fade-left"
           />
           <div className="patron-info" data-aos="fade-up">
             <h3>Under The Patronage of</h3>
@@ -171,14 +209,14 @@ const HomePage = () => {
         </div>
 
         {/* Text Section */}
-        <div className="about-text" data-aos="fade-up">
+        <div className="about-text d-none d-lg-block" data-aos="fade-up">
           <h2>About ERFL Global Summit</h2>
-          <p>
+          <p data-aos="fade-left">
             The <strong>Emergency Response & Fire Leadership Global Summit (ERFL)</strong> 
             is an international platform dedicated to addressing research, innovations, and 
             best practices in emergency response, crisis management, fire safety, and leadership.
           </p>
-          <p>
+          <p data-aos="fade-right">
             Bringing together <strong>experts, policymakers, and industry leaders</strong> 
             from across the world, ERFL fosters collaboration and knowledge-sharing to tackle 
             the evolving challenges in emergency response management.
@@ -195,32 +233,32 @@ const HomePage = () => {
     </section>
 
 
-    <section class="past-exhibitors">
-  <h2 className="text-center pt-3">Past Exhibitors</h2>
-  <div className="carousel-container">
-      <div className="carousel-track">
-        {[...sponsors, ...sponsors].map((sponsor, index) => (
-          <div key={index} className="carousel-card">
-            <img src={sponsor.src} alt={sponsor.alt} />
+    <section className="event-overview" style={{overflow:"hidden"}}>
+      <h2 className="section-title" >Supported</h2>
+      <div className="past-exhibition">
+        {supported.map((event, index) => (
+          <div key={index} className="event-card" data-aos="fade-left">
+            <img src={event.src} alt={event.title} className="event-img"  data-aos="fade-right" />
+            
+            <div className="event-overlay">
+              <h3 className="text-center">
+                {event.title} <i className="fa-solid fa-arrow-right"></i>
+              </h3>
+              
+              {/* Show date if available */}
+              
+              <p>{event.description}</p>
+              <button className="view-btn">View</button>
+            </div>
           </div>
         ))}
       </div>
-    </div>
-</section>
+    </section>
 
     </>
   );
 };
 
-// Custom Arrows for Slider
-const CustomNextArrow = (props) => {
-  const { onClick } = props;
-  return <FaArrowRight className="custom-arrow next" onClick={onClick} />;
-};
 
-const CustomPrevArrow = (props) => {
-  const { onClick } = props;
-  return <FaArrowLeft className="custom-arrow prev" onClick={onClick} />;
-};
 
 export default HomePage;

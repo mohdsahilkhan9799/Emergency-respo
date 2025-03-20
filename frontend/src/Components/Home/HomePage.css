@@ -27,7 +27,7 @@
     }
     
     .slide:hover .slide-image {
-        transform: scale(1.1);
+        transform: scale(1.4);
     }
     
     /* Custom Arrows */
@@ -269,75 +269,10 @@
 }
 
 
-/* Carousel Container */
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
+.pasthere{
     background: #f8f9fa;
-    padding: 20px 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Carousel Track (for infinite scrolling) */
-  .carousel-track {
-    display: flex;
-    gap:100px;
-    animation: scroll 20s linear infinite;
-  }
-  
-  /* Carousel Card */
-  .carousel-card {
-    min-width: 150px;
-    height: 150px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-card img {
-    width: 80%;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Hover Effects */
-  .carousel-card:hover {
-    transform: scale(1.1);
-  }
-  
-  .carousel-card:hover img {
-    transform: scale(1.2);
-  }
-  
-  /* Scrolling Animation */
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .carousel-track {
-      animation: scroll 10s linear infinite;
-      gap: 50px;
-    }
-  
-    .carousel-card {
-      min-width: 120px;
-      height: 120px;
-    }
-  }
-  
+}
+
 
       
 /* Full-Page About Section */
@@ -475,4 +410,174 @@
         text-align: center;
     }
 }
-
+/*********************************
+  Section Container & Title
+**********************************/
+.event-overview {
+    background: #f8f9fa;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003a5d;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  
+  /*********************************
+    Cards Grid
+  **********************************/
+  .past-exhibition {
+    display: grid;
+    /* Auto-fit ensures responsiveness:
+       will create as many 280px columns as fit in the row */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /*********************************
+    Individual Card Styles
+  **********************************/
+  .event-card {
+    position: relative;
+    /* Increase card height */
+    height: 350px; 
+    overflow: hidden;
+    
+    /* Red border */
+    border: 2px solid red;
+    border-radius: 12px;
+  
+    /* Smooth transition for hover effects */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+    /* Default box shadow */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  
+    cursor: pointer;
+  }
+  
+  /* Hover: zoom + deeper shadow from bottom to top */
+  .event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+  
+  .event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /*********************************
+    Overlay (Title + Details)
+  **********************************/
+  .event-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    /* Initially, just enough height to show the title area */
+    height: 50px;
+    /* Dark overlay color */
+    background: rgba(0,58,93,0.9);
+    color: #fff;
+    overflow: hidden;
+  
+    /* Animation & Layout */
+    transition: height 0.4s ease-in-out;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  /* Underline the title */
+  .event-overlay h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Hide date, description & button until hovered */
+  .event-overlay p,
+  .event-overlay .view-btn {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  /* On hover, expand the overlay and reveal details */
+  .event-card:hover .event-overlay {
+    height: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  /* Fade in date, description, and button */
+  .event-card:hover .event-overlay p,
+  .event-card:hover .event-overlay .view-btn {
+    opacity: 1;
+  }
+  
+  /* Date styling (after the title) */
+ 
+  
+  /* Description styling */
+  .event-overlay p {
+    margin: 10px 0 0 0;
+    font-size: 0.9rem;
+  }
+  
+  /*********************************
+    View Button
+  **********************************/
+  .view-btn {
+    margin-top: 10px;
+    background: #fff;
+    color: #003a5d;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-btn:hover {
+    background: #ff9800;
+    color: #fff;
+  }
+  
+  /*********************************
+    Media Queries (Responsive)
+  **********************************/
+  @media screen and (max-width: 768px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .event-overlay {
+      height: 40px;
+      padding: 0 10px;
+    }
+  
+    .event-overlay h3 {
+      font-size: 0.9rem;
+    }
+  
+    .event-overlay p {
+      font-size: 0.8rem;
+    }
+  
+    .view-btn {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  }
+  
