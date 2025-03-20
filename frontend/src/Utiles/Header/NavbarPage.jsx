@@ -51,6 +51,7 @@ const NavbarPage = () => {
                 src="https://erfl.org/demo2025.3/img/logo.jpg"
                 alt="Event Logo"
                 className="custom-logo-img me-3"
+                href="/"
               />
             </div>
             {/* Supported & Organized By */}
@@ -93,6 +94,10 @@ const NavbarPage = () => {
             {/* Desktop Navigation */}
             <div className="collapse navbar-collapse" id="customMainNavbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link custom-nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+              </li>
               <li className="nav-item">
                 <a className="nav-link custom-nav-link" href="#">About</a>
               </li>
@@ -152,8 +157,12 @@ const NavbarPage = () => {
           <div className={`mobile-nav ${isMobileMenuOpen ? "open" : ""}`}>
             <button className="close-btn" onClick={() => setIsMobileMenuOpen(false)}>✖</button>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+                <a className="nav-link custom-nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+              </li>
               <li className="nav-item">
-                <a className="nav-link custom-nav-link" href="#">About</a>
+                <a className="nav-link custom-nav-link " href="#">About</a>
               </li>
 
               {/* Conference Dropdown */}
