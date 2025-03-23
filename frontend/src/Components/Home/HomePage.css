@@ -27,7 +27,7 @@
     }
     
     .slide:hover .slide-image {
-        transform: scale(1.4);
+        transform: scale(2);
     }
     
     /* Custom Arrows */
@@ -109,8 +109,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background: #007b8f;
-        color: white;
+        /* background: #007b8f; */
+        background: rgb(18,124,192);
+        background: linear-gradient(90deg, rgba(18,124,192,1) 100%, rgba(19,9,64,1) 100%);color: white;
         padding: 40px 20px;
         text-align: center;
     }
@@ -288,7 +289,9 @@
 
 /* About Container */
 .about-container {
-    background: linear-gradient(to right, #0f4d58, #258a93);
+    /* background: linear-gradient(to right, #0f4d58, #258a93); */
+    background: linear-gradient(to right, #ea0800, #ff9244);
+
     padding: 60px;
     border-radius: 10px;
     max-width: 1200px;
@@ -315,9 +318,9 @@
     margin-top: 15px;
 }
 
-.patron-info h3 {
+.patron-info h2 {
     font-size: 1.5rem;
-    color: rgb(64, 255, 26);
+    color: rgb(5, 5, 5);
 }
 
 .patron-info p {
@@ -345,6 +348,7 @@
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 15px;
+    
 }
 
 /* Buttons */
@@ -580,4 +584,11 @@
       padding: 6px 10px;
     }
   }
+
+  .fontDes{
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
   
+
+
+

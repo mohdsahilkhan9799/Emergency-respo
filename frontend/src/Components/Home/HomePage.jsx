@@ -19,7 +19,7 @@ const slides = [
   {
     id: 1,
     image:
-      "https://img.freepik.com/premium-photo/fireman-fire_37874-674.jpg?w=1380",
+        "https://img.freepik.com/premium-photo/firefighters-fighting-fire_35672-1137.jpg?w=996",
 
         title: "Emergency Response & Fire Leadership",
     description:
@@ -28,15 +28,14 @@ const slides = [
   {
     id: 2,
     image:
-    "https://img.freepik.com/free-photo/firefighter-trying-contain-forest-fire_23-2150880213.jpg?t=st=1742449823~exp=1742453423~hmac=af9fa48daa29b85e49f9a65134c2ab3d2800a5e0ef6534e069f66a1750ed3166&w=1380",
+    "https://img.freepik.com/premium-photo/brave-firefighter-battling-flames_1287196-7105.jpg?w=1060",
   title: "Managing Fire & Emergency Response",
     description: "Preparedness | Response | Recovery",
   },
   {
     id: 3,
     image:
-      "https://img.freepik.com/premium-photo/fireman-fire_37874-4266.jpg?w=1380",
-    title: "Fire Leadership",
+      "https://img.freepik.com/free-psd/firefighter-works-fire-fireman-walks-inside-burning-building-generative-ai_587448-2245.jpg?t=st=1742711910~exp=1742715510~hmac=0f9730a01b6c9e4e84574dc3b126da8efba7fb4077e7b7276dc183f864358edf&w=1380",
     description:
       "Global Summit 2024 (ERFL Global Summit 2024) is an international platform that will address research and innovations in the field of emergency response, crisis management, fire and safety.",
   },
@@ -51,13 +50,7 @@ const stats = [
   { id: 6, number: 110, text: "Participating Countries" },
 ];
 
-const sponsors = [
-  { id: 1, src: "https://erfl.org/demo2025.3/img/gisco-logo.jpg", alt: "Saudi Sicli" },
-  { id: 2, src: "https://erfl.org/demo2025.3/img/apsensing.jpg", alt: "Bayan" },
-  { id: 3, src: "https://erfl.org/demo2025.3/img/bayan.jpg", alt: "International Technical Support" },
-  { id: 4, src: "https://erfl.org/demo2025.3/img/its.jpg", alt: "Honeywell" },
-  { id: 5, src: "https://erfl.org/demo2025.3/img/honeywell.jpg", alt: "Siemens" },
-];
+
 const supported = [
   { id: 1, src: "https://erfl.org/demo2025.3/images/randum/ERFL_EVENT_BROCHURE.png", alt: "Saudi Sicli",
     title:"Event Brochure",
@@ -76,6 +69,14 @@ const supported = [
     description: "A unique platform to showcase your brand"
    },
   
+];
+
+const pastExhibation = [
+  { id: 1, src: "https://erfl.org/demo2025.3/img/gisco-logo.jpg", alt: "Saudi Sicli" },
+  { id: 2, src: "https://erfl.org/demo2025.3/img/apsensing.jpg", alt: "Bayan" },
+  { id: 3, src: "https://erfl.org/demo2025.3/img/bayan.jpg", alt: "International Technical Support" },
+  { id: 4, src: "https://erfl.org/demo2025.3/img/its.jpg", alt: "Honeywell" },
+  { id: 5, src: "https://erfl.org/demo2025.3/img/honeywell.jpg", alt: "Siemens" },
 ];
 
 
@@ -97,7 +98,7 @@ const CustomPrevArrow = (props) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -106,6 +107,31 @@ const CustomPrevArrow = (props) => {
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
   };
+
+
+
+  const cards = [
+    {
+      id: 1,
+      image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+      title: "Burgundy Flemming",
+      subtitle: "Advertising",
+    },
+    {
+      id: 2,
+      image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample119.jpg",
+      title: "Nigel Nigel",
+      subtitle: "Sound & Vision",
+    },
+    {
+      id: 3,
+      image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample120.jpg",
+      title: "Caspian Bellevedere",
+      subtitle: "Accounting",
+    },
+  ];
+
+
 
   return (
     <>
@@ -144,8 +170,8 @@ const CustomPrevArrow = (props) => {
         /></p>
   <div className="buttons">
     <button className="btn btn-primary">Visitor Registration</button>
-    <button className="btn btn-secondary">Book Your Delegate Pass</button>
-    <button className="btn btn-success">Book a Stand</button>
+    <button className="btn btn-danger">Book Your Delegate Pass</button>
+    <button className="btn btn-primary">Book a Stand</button>
   </div>
 </div>
 
@@ -175,7 +201,7 @@ const CustomPrevArrow = (props) => {
       <div className="stats-section" style={{overflow:"hidden"}}>
         {stats.map((stat) => (
           <div key={stat.id} className="stat-box" data-aos="fade-up">
-            <h2>
+            <h2 data-aos="fade-left" >
               <CountUp
                 start={0}
                 end={stat.number}
@@ -183,6 +209,7 @@ const CustomPrevArrow = (props) => {
                 separator=","
               />
               {stat.suffix || "+"}
+              
             </h2>
             <p>{stat.text}</p>
           </div>
@@ -190,10 +217,9 @@ const CustomPrevArrow = (props) => {
       </div>
     </div>
        {/* About Section */}
-       <section className="about-section" style={{overflow:"hidden"}}>
+       {/* <section className="about-section" style={{overflow:"hidden"}}>
       <div className="about-container">
         
-        {/* Image Section */}
         <div className="about-image" data-aos="fade-up">
           <img
             src="https://erfl.org/demo2025.3/img/H.E%20Khalid%20Al-Salem.png"
@@ -201,28 +227,25 @@ const CustomPrevArrow = (props) => {
             data-aos="fade-left"
           />
           <div className="patron-info" data-aos="fade-up">
-            <h3>Under The Patronage of</h3>
+            <h2>Under The Patronage of</h2>
             <p><strong>H.E. Khalid Al Salime</strong></p>
             <p>President, Royal Communication for Jubail and Yandu</p>
             <p>Kingdom of Bahrain</p>
           </div>
         </div>
 
-        {/* Text Section */}
         <div className="about-text d-none d-lg-block" data-aos="fade-up">
           <h2>About ERFL Global Summit</h2>
-          <p data-aos="fade-left">
+          <p className="fontDes" data-aos="fade-left">
             The <strong>Emergency Response & Fire Leadership Global Summit (ERFL)</strong> 
             is an international platform dedicated to addressing research, innovations, and 
             best practices in emergency response, crisis management, fire safety, and leadership.
           </p>
-          <p data-aos="fade-right">
+          <p className="fontDes" data-aos="fade-right">
             Bringing together <strong>experts, policymakers, and industry leaders</strong> 
             from across the world, ERFL fosters collaboration and knowledge-sharing to tackle 
             the evolving challenges in emergency response management.
           </p>
-
-          {/* Buttons */}
           <div className="buttons">
             <button className="btn btn-secondary">Learn More</button>
             <button className="btn btn-success">Register Now</button>
@@ -230,7 +253,7 @@ const CustomPrevArrow = (props) => {
         </div>
         
       </div>
-    </section>
+    </section> */}
 
 
     <section className="event-overview" style={{overflow:"hidden"}}>
@@ -254,6 +277,8 @@ const CustomPrevArrow = (props) => {
         ))}
       </div>
     </section>
+
+
 
     </>
   );

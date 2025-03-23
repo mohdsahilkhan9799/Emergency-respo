@@ -1,6 +1,8 @@
 /* ---------- TOP BAR ---------- */
 .custom-top-bar {
-    background: linear-gradient(to right, #e52d27, #ff6a00);
+    /* background: linear-gradient(to right, #e52d27, #ff6a00); */
+    background: rgb(18,124,192);
+background: linear-gradient(90deg, rgba(18,124,192,1) 100%, rgba(19,9,64,1) 100%);
     font-size: 14px;
     font-weight: 500;
   }
@@ -46,7 +48,9 @@
   
   /* ---------- BOTTOM NAVBAR ---------- */
   .custom-bg-gradient {
-    background: linear-gradient(to right, #0f4d58, #258a93);
+    /* background: linear-gradient(to right, #0f4d58, #258a93); */
+    background: linear-gradient(to right, #ea0800, #ff9244);
+
   }
   .navbar-nav .custom-nav-link {
     color: #fff !important;
@@ -143,7 +147,9 @@ body {
     left: -100%;
     width: 80%;
     height: 100vh;
-    background: linear-gradient(to right, #0f4d58, #258a93);
+    /* background: linear-gradient(to right, #0f4d58, #258a93); */
+    background: linear-gradient(to right, #ea0800, #ff9244);
+
     color: white;
     padding: 20px;
     transition: all 0.3s ease-in-out;
