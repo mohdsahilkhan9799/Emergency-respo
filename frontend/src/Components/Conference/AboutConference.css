@@ -1,0 +1,140 @@
+/* Full Page Background */
+.main-conf {
+    background: url("../../Photos/BACKGROUND-BANNER.jpg") no-repeat center center/cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5%;
+  }
+  
+  /* Main Container */
+  .about_container_conf {
+    text-align: center;
+  }
+  
+  /* About Section */
+  .about_section_conf {
+    margin-bottom: 50px;
+  }
+  
+  .about_title_conf {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00aeff;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  
+  .about_text_conf {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 1500px;
+    margin: 0 auto;
+    color: #fffbfb;
+    text-align: justify;
+  }
+  
+  /* Cards Section */
+  .cards_container_conf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  /* Individual Card */
+  .card_conf {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    width: 350px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card_conf:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Image */
+  .card_image_conf {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+  
+  /* Card Title */
+  .card_title_conf {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 10px;
+  }
+  
+  /* Card List */
+  .card_list_conf {
+    list-style: none;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .card_list_conf li {
+    font-size: 16px;
+    color: #fffbfb;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .card_list_conf li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff9800;
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .cards_container_conf {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card_conf {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about_title_conf {
+      font-size: 28px;
+    }
+  
+    .about_text_conf {
+      font-size: 16px;
+    }
+  
+    .card_conf {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .card_title_conf {
+      font-size: 20px;
+    }
+  
+    .card_list_conf li {
+      font-size: 14px;
+    }
+  }
+  

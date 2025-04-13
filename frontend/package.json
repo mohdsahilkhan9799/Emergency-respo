@@ -1,6 +1,8 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "/Newdemo.2026.02",
+
   "private": true,
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
